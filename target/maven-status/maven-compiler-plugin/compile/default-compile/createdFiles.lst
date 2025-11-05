@@ -1,0 +1,4 @@
+com\segundaAPI\minhaSegundaAPI\MinhaSegundaApiApplication.class
+com\segundaAPI\minhaSegundaAPI\Service\ProdutoService.class
+com\segundaAPI\minhaSegundaAPI\Controller\ProdutoController.class
+com\segundaAPI\minhaSegundaAPI\Model\Produto.class

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Produtos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gerenciador de Produtos</h1>
+            <p>Interface para demonstrar consumo de API REST</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Formulário para adicionar/editar produtos -->
+            <section class="form-section">
+                <h2 id="form-title">Adicionar Novo Produto</h2>
+                <form id="produto-form">
+                    <input type="hidden" id="produto-id">
+                    <div class="form-group">
+                        <label for="nome">Nome do Produto:</label>
+                        <input type="text" id="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="preco">Preço (R$):</label>
+                        <input type="number" id="preco" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="submit-btn">Adicionar Produto</button>
+                        <button type="button" id="cancel-btn" style="display: none;">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Lista de produtos -->
+            <section class="products-section">
+                <h2>Lista de Produtos</h2>
+                <div class="actions">
+                    <button id="refresh-btn">Atualizar Lista</button>
+                </div>
+                <div id="loading" class="loading">Carregando produtos...</div>
+                <div id="produtos-list" class="produtos-list"></div>
+                <div id="empty-message" class="empty-message" style="display: none;">
+                    Nenhum produto cadastrado. Adicione o primeiro produto usando o formulário acima.
+                </div>
+            </section>
+        </div>
+
+        <!-- Modal para confirmação de exclusão -->
+        <div id="delete-modal" class="modal">
+            <div class="modal-content">
+                <h3>Confirmar Exclusão</h3>
+                <p>Tem certeza que deseja excluir o produto "<span id="produto-nome"></span>"?</p>
+                <div class="modal-actions">
+                    <button id="confirm-delete" class="btn-danger">Excluir</button>
+                    <button id="cancel-delete">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notificações -->
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
